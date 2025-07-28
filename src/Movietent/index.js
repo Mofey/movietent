@@ -33,8 +33,15 @@ const Movietent = () => {
 
   //Fetches data from the API as the component loads
   useEffect(() => {
-    searchMovies(["Avengers", "Batman", "Fast"]);
+    searchMovies(["Avengers", "Fast", "X-Men"]);
   }, []);
+
+  useEffect(() => {
+    if (searchTerm.trim() !== "") {
+      searchMovies([searchTerm]);
+    }
+  }, [searchTerm]);
+
 
   return (
     <div className="app">
@@ -49,7 +56,7 @@ const Movietent = () => {
         <img
           src={SearchIcon}
           alt="search"
-          onClick={() => searchMovies(searchTerm)}
+          onClick={() => searchMovies([searchTerm])}
         />
       </div>
 
