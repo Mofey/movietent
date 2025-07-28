@@ -4,7 +4,7 @@ import SearchIcon from "./search.svg";
 import "./App.css";
 
 
-const API_URL = "OMDb API";
+const API_URL = `${process.env.REACT_APP_OMDB_API_KEY}`;
 
 const Movietent = () => {
 
@@ -14,20 +14,27 @@ const Movietent = () => {
   //Taking each individual data and dynamically passing it as a prop to the external component which is going to result in the render of all the movies
   const [movies, setMovies] = useState([]);
 
-  //Fetches data from the API as the component loads
-  useEffect(() => {
-    searchMovies("Batman");
-  }, []);
-
   //A function that fetches the movies
   //Asynchronous function means that it takes sometime to fetch data
-  const searchMovies = async (title) => {
-    const response = await fetch(`${API_URL}&s=${title}`);
-    const data = await response.json();
+  const searchMovies = async (titles) => {
+    const allResults = [];
 
-    //Gives access to data
-    setMovies(data.Search);
+    for (const title of titles) {
+      const response = await fetch(`${API_URL}&s=${title}`);
+      const data = await response.json();
+
+      if (data.Response === "True") {
+        allResults.push(...data.Search); // spread to flatten into one array
+      }
+    }
+
+    setMovies(allResults);
   };
+
+  //Fetches data from the API as the component loads
+  useEffect(() => {
+    searchMovies(["Avengers", "Batman", "Fast"]);
+  }, []);
 
   return (
     <div className="app">
@@ -49,7 +56,7 @@ const Movietent = () => {
       {movies?.length > 0 ? (
         <div className="container">
           {movies.map((movie) => (
-            <MovieCard movie={movie} />
+            <MovieCard key={movie.imdbID} movie={movie} />
           ))}
         </div>
       ) : (
