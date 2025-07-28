@@ -40,17 +40,9 @@
 ```
 movietent/
 ├── public/
-│   ├── index.html
-│   └── screenshot.png
-├── src/
-│   ├── assets/
-│   │   └── search.svg
-│   ├── App.css
-│   ├── App.js
-│   ├── index.js
-│   ├── Movietent.js
-│   └── MovieCard.js
-└── .env
+└── src/
+   └── Movietent/
+ 
 ```
 
 ## 🔍 How It Works
