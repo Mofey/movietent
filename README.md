@@ -9,10 +9,6 @@
 - 💡 Responsive and simple UI  
 - 🔐 Uses `.env` to store the API key securely  
 
-## 📸 Screenshot
-> _Replace this with your own screenshot if available_  
-![screenshot](./public/screenshot.png)
-
 ## 🛠️ Tech Stack
 - React (with Hooks)  
 - JavaScript  
@@ -67,7 +63,7 @@ When the app loads, it automatically fetches results for predefined titles (e.g.
 - Documentation: http://www.omdbapi.com/
 
 ## 📄 License
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under the [https://github.com/Mofey](LICENSE).
 
 ## 🙌 Acknowledgments
 - [OMDb API](http://www.omdbapi.com/) for providing a free movie database  
