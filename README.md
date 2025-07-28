@@ -55,7 +55,7 @@ When the app loads, it automatically fetches results for predefined titles (e.g.
 - Documentation: http://www.omdbapi.com/
 
 ## 📄 License
-This project is open source and available under the [https://github.com/Mofey](LICENSE).
+This project is open source and available in [Mofey](https://github.com/Mofey?tab=repositories)'s repositories.
 
 ## 🙌 Acknowledgments
 - [OMDb API](http://www.omdbapi.com/) for providing a free movie database  
